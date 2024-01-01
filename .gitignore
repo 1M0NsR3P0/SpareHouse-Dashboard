@@ -1,3 +1,4 @@
 /Server/node_modules/*
 .env
 .vercel
+Server/node_modules/*
