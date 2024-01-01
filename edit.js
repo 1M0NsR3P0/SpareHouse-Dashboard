@@ -4,7 +4,7 @@ window.onload = () => {
     callerEditor(querySearch)
     function callerEditor(params) {
         if (querySearch !== "") {
-            const data = fetch(`http://192.168.1.115:5000/getproduct/${params}`)
+            const data = fetch(`http://localhost:5000/getproduct/${params}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
@@ -282,7 +282,7 @@ function productEditFetcher(data) {
             purhase: purhase,
             cost: cost
         }
-        fetch(`http://192.168.1.115:5000/product/update/${data.barCode}`, {
+        fetch(`http://localhost:5000/product/update/${data.barCode}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

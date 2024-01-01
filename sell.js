@@ -9,7 +9,7 @@ const itemDataArray = [];
 document.querySelector(".btn").addEventListener("click", async () => {
     // console.log(search)
     if (search !== "") {
-        const data = await fetch(`http://192.168.1.115:5000/stock/query/${search}`)
+        const data = await fetch(`http://localhost:5000/stock/query/${search}`)
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
@@ -245,7 +245,7 @@ async function sendToServer(obj) {
 
 console.log(objArray)
     try {
-        const response = await fetch('http://192.168.1.115:5000/sell/add', {
+        const response = await fetch('http://localhost:5000/sell/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

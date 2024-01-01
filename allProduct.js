@@ -11,13 +11,13 @@ async function loadProducts(selectedValue,data) {
     // Define the URL based on the selectedValue
     let url;
     if (selectedValue === "All") {
-        url = 'http://192.168.1.115:5000/products';
+        url = 'http://localhost:5000/products';
     }
     else if (selectedValue === "Sold") {
-        url = 'http://192.168.1.115:5000/sold';
+        url = 'http://localhost:5000/sold';
     }
     else if (selectedValue === "Stock") {
-        url = 'http://192.168.1.115:5000/stock';
+        url = 'http://localhost:5000/stock';
     }
 
     // console.log(url)
@@ -193,7 +193,7 @@ async function updateProductPrice(productId, endpoint, newPrice) {
     }
 
     try {
-        const response = await fetch(`http://192.168.1.115:5000/edit/product/price/${productId}`, {
+        const response = await fetch(`http://localhost:5000/edit/product/price/${productId}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -229,7 +229,7 @@ async function deleteProduct(productId, endpoint) {
         selectedValue = "Stock"
     }
     try {
-        const response = await fetch(`http://192.168.1.115:5000/${endpoint}/${productId}`, {
+        const response = await fetch(`http://localhost:5000/${endpoint}/${productId}`, {
             method: 'DELETE',
         });
 
@@ -280,7 +280,7 @@ async function sorting() {
         let search = searcher.value;
         if (search) {
             // console.log(sortBy, search)
-            urL = `http://192.168.1.115:5000/product/sort/${sortBy}/${search}`
+            urL = `http://localhost:5000/product/sort/${sortBy}/${search}`
             console.log(urL)
             try {
                 const response = await fetch(urL);

@@ -35,7 +35,7 @@
             // const val = document.querySelector('#search').value;
             // searchValue.push(val)
             if (querySearch !== "") {
-                const data = fetch(`http://192.168.1.115:5000/getproduct/${querySearch}`)
+                const data = fetch(`http://localhost:5000/getproduct/${querySearch}`)
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
@@ -55,7 +55,7 @@
         // });
 
         // document.querySelector('#editorCaller').addEventListener('click',()=>{
-        //     const data = fetch(`http://192.168.1.115:5000/getproduct/${searchValue[0]}`)
+        //     const data = fetch(`http://localhost:5000/getproduct/${searchValue[0]}`)
         //             .then(response => response.json())
         //             .then(data => {
         //                 if (data.success) {

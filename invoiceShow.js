@@ -2,7 +2,7 @@ const query = new URLSearchParams(window.location.search);
 const ProductId = query.get("searchValue");
 const invoicePathcer = () => {
     // Define the URL to fetch data from the server
-    const apiUrl = `http://192.168.1.115:5000/sold/${ProductId}`;
+    const apiUrl = `http://localhost:5000/sold/${ProductId}`;
 
     // Use the fetch API to make a GET request to the server
     fetch(apiUrl)

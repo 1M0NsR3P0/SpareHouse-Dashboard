@@ -288,7 +288,7 @@ let serverProducts;
 
 async function fetchData() {
   try {
-    const response = await fetch('http://192.168.1.115:5000/products');
+    const response = await fetch('http://localhost:5000/products');
     const data = await response.json();
     serverProducts = data.data;
   } catch (error) {
@@ -372,7 +372,7 @@ async function insertBulkData(e) {
       };
 
       try {
-        const response = await fetch('http://192.168.1.115:5000/products/add', {
+        const response = await fetch('http://localhost:5000/products/add', {
           method: "POST",
           headers: {
             'Content-Type': 'application/json',
